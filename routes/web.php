@@ -7,9 +7,12 @@ use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades;
 use Illuminate\Support\Facades\Response;
+use App\Services\ProductService;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-    return ("Hello");   
+    return view('welcome', ['name' => 'henson-app']);
+    // return 'Hello';
 });
 
 Route::get('/show-users', [UserController::class, 'show']);
@@ -67,4 +70,13 @@ Route::get('/token', function (Request $request) {
 
 Route::post('/token', function (Request $request) {
     return $request->all();
+});
+
+Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+
+Route::resource('products', ProductController::class);
+
+Route::get('/product-list', function (ProductService $productService) {
+    $data['products'] = $productService->listProducts();
+    return view('products.list', $data);
 });
