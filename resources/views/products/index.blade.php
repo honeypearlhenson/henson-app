@@ -1,5 +1,8 @@
+<x-layout>
+    <x-slot:heading>Product List</x-slot>
+<x-table>
 <div class="container mt-5">
-    <h1>Products</h1>
+    <!-- <h1>Products</h1> -->
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,8 +22,10 @@
         </tbody>
     </table>
 </div>
+</x-table>
+</x-layout>
 
-<h1>Tasks</h1>
+<!-- <h1>Tasks</h1>
 <ul>
     @foreach ($tasks as $task)
         <li>{{ $task}}</li>
@@ -30,4 +35,4 @@
 <p>Global Variables:</p>
 <p>{{ $sharedVariable }}</p>
 
-<p>Product Key: {{ $productKey }}</p>
+<p>Product Key: {{ $productKey }}</p> -->

@@ -24,7 +24,7 @@ class UserServiceProvider extends ServiceProvider
             [
                 'id' => 2,
                 'name' => 'Joseph Doe',
-                'gender' => 'Female']
+                'gender' => 'Male']
 
         ];
 
